@@ -34,3 +34,8 @@ $$ H = K \frac{1}{s^2+2\zeta \omega s+\omega^2} $$
 - $\zeta$  is the dampening effect, where $0 \leq \zeta$
 - $K$ is the system gain
 - $\omega$ is the natural frequency of the system
+
+## Sample output
+
+![image](https://user-images.githubusercontent.com/6416943/176263302-306d1fd8-cab8-4d93-879c-a34fcb1faf39.png)
+
