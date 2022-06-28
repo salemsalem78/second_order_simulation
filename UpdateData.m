@@ -1,0 +1,11 @@
+global Data;
+global MyHandles;
+Data.time = Data.time + Data.time_step_size;
+Data.x(1:end-1) = Data.x(2:end);
+Data.x(end) = Data.x(end-1);
+Data.ypp = (Data.K)*(Data.omega^2)*Data.x(Data.N)-2*(Data.zeta)*(Data.omega)*(Data.yp)-(Data.omega^2)*Data.y(Data.N-1);
+Data.yp = Data.yp + Data.ypp*Data.time_step_size;
+Data.y(1:((Data.N)-1)) = Data.y(2:Data.N);
+Data.y(Data.N) = Data.y(Data.N) + Data.yp*Data.time_step_size;
+plot(MyHandles.systemaxes,Data.time,Data.x,'g--',Data.time(1:Data.N),Data.y(1:Data.N),'b-','linewidth',2);
+axis(MyHandles.systemaxes,[Data.time(1) Data.time(end)+1 -2 5]);
